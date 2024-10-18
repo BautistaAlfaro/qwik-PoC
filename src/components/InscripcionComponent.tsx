@@ -2,13 +2,11 @@ import { component$, useStore, $ } from '@builder.io/qwik';
 
 
 export const InscripcionComponent = component$(() => {
-  // Definición de la interfaz para las inscripciones
   interface Inscripcion {
     nombre: string;
     carrera: string;
   }
 
-  // Estado global del componente
   const store = useStore<{
     inscripciones: Inscripcion[];
     nombre: string;
@@ -16,7 +14,7 @@ export const InscripcionComponent = component$(() => {
     carreras: string[];
     editingIndex: number;
     error: string;
-    successMessage: string; // Mensaje de éxito después de inscribir o actualizar
+    successMessage: string; 
   }>({
     inscripciones: [],
     nombre: '',
@@ -31,15 +29,15 @@ export const InscripcionComponent = component$(() => {
     ],
     editingIndex: -1,
     error: '',
-    successMessage: '', // Nuevo estado para mostrar mensajes de éxito
+    successMessage: '', 
   });
 
-  // Función para crear o actualizar una inscripción
+
   const crearOActualizarInscripcion = $(() => {
-    // Validar que los campos no estén vacíos
+ 
     if (!store.nombre || !store.carrera) {
       store.error = 'Por favor, completa todos los campos.';
-      store.successMessage = ''; // Limpiar mensaje de éxito
+      store.successMessage = ''; 
       return;
     }
   
@@ -49,19 +47,19 @@ export const InscripcionComponent = component$(() => {
     };
   
     if (store.editingIndex === -1) {
-      // Añadir una nueva inscripción
+      
       store.inscripciones = [...store.inscripciones, nuevaInscripcion];
       store.successMessage = 'Inscripción realizada con éxito.';
     } else {
-      // Editar una inscripción existente
+      
       const nuevasInscripciones = [...store.inscripciones];
       nuevasInscripciones[store.editingIndex] = nuevaInscripcion;
       store.inscripciones = nuevasInscripciones;
-      store.editingIndex = -1; // Reiniciar el índice de edición
+      store.editingIndex = -1; 
       store.successMessage = 'Inscripción actualizada con éxito.';
     }
   
-    // Limpiar campos y mensajes de error
+
     store.nombre = '';
     store.carrera = '';
     store.error = '';
@@ -70,11 +68,11 @@ export const InscripcionComponent = component$(() => {
     const inscripcion = store.inscripciones[index];
     store.nombre = inscripcion.nombre;
     store.carrera = inscripcion.carrera;
-    store.editingIndex = index;  // Guardar el índice de edición
-    store.successMessage = '';   // Limpiar mensaje de éxito al editar
+    store.editingIndex = index;  
+    store.successMessage = '';   
   });
 
-  // Función para eliminar una inscripción
+  
   const eliminarInscripcion = $((index: number) => {
     store.inscripciones = store.inscripciones.filter((_, i) => i !== index);
     store.successMessage = 'Inscripción eliminada con éxito.';
@@ -131,7 +129,7 @@ export const InscripcionComponent = component$(() => {
         <ul class="inscripciones-list">
   {store.inscripciones.map((inscripcion, index) => (
     <li key={index} class="inscripcion-item">
-      <span>{inscripcion.nombre} - {inscripcion.carrera}</span> {/* Aquí está el texto a modificar */}
+      <span>{inscripcion.nombre} - {inscripcion.carrera}</span> {}
       <div class="action-buttons">
         <button onClick$={() => editarInscripcion(index)} class="edit-btn">Editar</button>
         <button onClick$={() => eliminarInscripcion(index)} class="delete-btn">Eliminar</button>

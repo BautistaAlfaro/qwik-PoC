@@ -4,7 +4,7 @@ import { component$, useStore, $ } from '@builder.io/qwik';
 
 
 export const MainContent = component$(() => {
-  // Estado para controlar la visibilidad de las descripciones
+
   const state = useStore({
     diplomaturaVisible: false,
     tecnicaturaVisible: false,
@@ -14,9 +14,8 @@ export const MainContent = component$(() => {
     especializacionVisible: false
   });
 
-  // Función para alternar la visibilidad de una sección
   const toggleVisibility = $((key: keyof typeof state) => {
-    state[key] = !state[key]; // Alterna entre true y false
+    state[key] = !state[key]; 
   });
 
   return (
@@ -126,20 +125,20 @@ export const MainContent = component$(() => {
   );
 });
 
-// Estilos para el contenedor de los cuadros
+
 const containerStyle = {
   display: 'flex',
   justifyContent: 'center',
   flexWrap: 'wrap',
-  gap: '2rem', // Espacio entre los cuadros
-  maxWidth: '1200px', // Limitar el ancho total del contenedor
-  margin: '0 auto' // Centramos el contenedor
+  gap: '2rem', 
+  maxWidth: '1200px', 
+  margin: '0 auto' 
 };
 
-// Estilo para los cuadros
+
 const squareStyle = {
-  width: '300px', // Aumentamos el tamaño del cuadro
-  height: '300px', // Aumentamos el tamaño del cuadro
+  width: '300px', 
+  height: '300px', 
   backgroundColor: '#201E43',
   color: 'white',
   display: 'flex',

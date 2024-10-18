@@ -1,31 +1,30 @@
-/* Global reset y normalización básica */
+
 html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   width: 100%;
   overflow-x: hidden;
-  font-family: Arial, sans-serif; /* Define una fuente base global */
+  font-family: Arial, sans-serif;
 }
 
 *, *::before, *::after {
-  box-sizing: inherit; /* Hace que todos los elementos respeten el box-sizing global */
+  box-sizing: inherit;
 }
 
-/* Estructura del layout general */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Estilos generales */
 h1, h2, h3, p {
   margin: 0;
-  text-align:center /* Centra todos los encabezados y párrafos de forma global */
+  text-align:center 
 }
 
-/* Estilo global para los inputs, selects y botones */
+
 input, select, button {
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -44,19 +43,19 @@ button:hover {
   background-color: #333;
 }
 
-/* Asegura que los elementos de formulario no se estiren más allá de lo necesario */
+
 input, select {
-  width: 100%; /* Esto puede ser sobrescrito en componentes específicos */
+  width: 100%; 
 }
 
-/* Estilos específicos para formularios y botones dentro de los componentes */
+
 .form-group {
-  margin-bottom: 1rem; /* Espaciado entre elementos del formulario */
+  margin-bottom: 1rem;
 }
 
 .error-message, .success-message {
   color: red;
-  text-align: left; /* Puedes ajustar el alineado según necesites */
+  text-align: left; 
   font-size: 0.9rem;
 }
 
@@ -64,16 +63,16 @@ input, select {
   color: green;
 }
 
-/* Estilo general de botones de acción dentro de listas */
+
 .action-buttons {
   display: flex;
   gap: 0.5rem;
 }
 
-/* Estilos independientes para el componente de inscripción */
+
 .inscripcion-container {
-  max-width: 500px; /* El formulario se limita a 500px */
-  margin: 2rem auto; /* Lo centra en la página */
+  max-width: 500px; 
+  margin: 2rem auto; 
   padding: 1rem;
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -91,10 +90,10 @@ input, select {
   text-align: center;
 }
 
-/* Ajustes para pantallas pequeñas */
+
 @media (max-width: 768px) {
   .inscripcion-container {
-    width: 90%; /* Asegura que se vea bien en móviles */
+    width: 90%;
   }
 }
 .inscripcion-container .title {
@@ -105,6 +104,6 @@ input, select {
   color: black;
 }
 .inscripcion-item {
-  color: black; /* Cambia el texto a color negro */
-  font-weight: normal; /* Ajusta el peso de la fuente si lo necesitas */
+  color: black; 
+  font-weight: normal; 
 }

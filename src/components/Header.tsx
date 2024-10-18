@@ -20,30 +20,30 @@ export const Header = component$(() => {
 
 const navContainerStyle = {
   display: 'flex',
-  justifyContent: 'flex-start', // Alinea todo a la izquierda
+  justifyContent: 'flex-start', 
   alignItems: 'center',
-  padding: '0 2rem', // Espaciado horizontal
-  marginLeft: '50px', // Ajusta este valor para moverlo a la derecha
-};
-// Estilo de la barra de navegación
-const navStyle = {
-  display: 'flex',
-  gap: '1rem', // Reduce el espacio entre los enlaces
+  padding: '0 2rem', 
+  marginLeft: '50px',
 };
 
-// Estilo de los links de navegación
+const navStyle = {
+  display: 'flex',
+  gap: '1rem', 
+};
+
+
 const navLinkStyle = {
   color: 'white',
   textDecoration: 'none',
   fontSize: '1.2rem',
-  transition: 'color 0.3s ease', // Transición suave para el hover
+  transition: 'color 0.3s ease', 
 };
 
-// Estilo para el logo
+
 const logoStyle = {
-  height: '50px',      // Mantiene la altura
-  width: 'auto',       // Mantiene la proporción de la imagen
-  margin: '10px 20px 10px 0', // Espaciado: arriba, derecha, abajo, izquierda (aumenté el margen derecho)
-  display: 'flex',      // Asegura que el logo se alinee correctamente
-  alignItems: 'center', // Alinea verticalmente el logo dentro del header
+  height: '50px',      
+  width: 'auto',      
+  margin: '10px 20px 10px 0', 
+  display: 'flex',      
+  alignItems: 'center',
 };
